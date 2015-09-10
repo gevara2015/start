@@ -31,3 +31,53 @@
         &.hide-block { right : -49%; }
     }
 }
+
+@media only screen and (max-width : 1024px) {
+    .settings-block .top-section .menu-btn {
+        font-size : 29px;
+    }
+    .week-weather {
+        margin-top : 55px;
+        .day {
+            padding : 12px 0;
+            .day-name {
+                margin-top : 11px;
+                width      : 80px;
+                font-size  : 24px;
+            }
+            .day-weather {
+                font-size : 42px;
+                em {
+                    position : relative;
+                    top      : 6px;
+                }
+            }
+            .temperature-range {
+                span { }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    .top-section {
+        margin-top : 50px;
+        .city { font-size : 55px; }
+        .date { font-size : 21px; }
+    }
+    .currently-weather {
+        .currently-temperature sup { right : 0; }
+        .state-description {
+            font-size : 14px;
+        }
+        .item {
+            &:nth-child(1) {
+                padding-left : 8px;
+                width        : 119px;
+            }
+            &:last-child { padding-right : 4px; }
+        }
+        .moon-phase { font-size : 74px; }
+        .moonrise-time { font-size : 28px; }
+    }
+}

@@ -117,7 +117,7 @@ a {
             display   : block;
             font-size : 20px;
         }
-        span{ display : block;}
+        span { display : block; }
         .weather-state { font-size : 70px; }
         .temperature { font-size : 40px; }
     }
@@ -321,11 +321,17 @@ a {
 
 .w-conf {
     position   : absolute;
-    bottom     : 0;
+    top        : 100%;
     z-index    : 20;
     width      : 100%;
     background : $cong-bg;
     padding    : 15px 0 15px 50px;
+    @include transition(all 0.1s linear);
+    &.open-block {
+        top    : auto;
+        bottom : 0;
+        .toggle-conf { top : 23px; }
+    }
     .w-conf-temp {
         padding-bottom : 22px;
         font-size      : 40px;
@@ -342,7 +348,7 @@ a {
     }
     .toggle-conf {
         position : absolute;
-        top      : 23px;
+        top      : -60px;
         right    : 53px;
         a { font-size : 41px; }
     }

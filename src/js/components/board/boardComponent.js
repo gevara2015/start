@@ -29,7 +29,7 @@ define(['text!components/board/boardComponent.tpl.html',
 
                 wPromise.done(function (dataWeather) {
                     var jsonString = JSON.stringify({dataWeather});
-                    console.log(jsonString);
+                    //console.log(jsonString);
                 });
             }
         }

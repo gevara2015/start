@@ -1024,11 +1024,19 @@ a {
 
 .w-conf {
   position: absolute;
-  bottom: 0;
+  top: 100%;
   z-index: 20;
   width: 100%;
   background: #152132;
-  padding: 15px 0 15px 50px; }
+  padding: 15px 0 15px 50px;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear; }
+  .w-conf.open-block {
+    top: auto;
+    bottom: 0; }
+    .w-conf.open-block .toggle-conf {
+      top: 23px; }
   .w-conf .w-conf-temp {
     padding-bottom: 22px;
     font-size: 40px; }
@@ -1045,7 +1053,7 @@ a {
         color: white; }
   .w-conf .toggle-conf {
     position: absolute;
-    top: 23px;
+    top: -60px;
     right: 53px; }
     .w-conf .toggle-conf a {
       font-size: 41px; }
@@ -1134,5 +1142,43 @@ a {
     max-width: 50.33333%; }
     .settings.hide-block {
       right: -49%; } }
+@media only screen and (max-width: 1024px) {
+  .settings-block .top-section .menu-btn {
+    font-size: 29px; }
+
+  .week-weather {
+    margin-top: 55px; }
+    .week-weather .day {
+      padding: 12px 0; }
+      .week-weather .day .day-name {
+        margin-top: 11px;
+        width: 80px;
+        font-size: 24px; }
+      .week-weather .day .day-weather {
+        font-size: 42px; }
+        .week-weather .day .day-weather em {
+          position: relative;
+          top: 6px; } }
+@media only screen and (max-width: 768px) {
+  .top-section {
+    margin-top: 50px; }
+    .top-section .city {
+      font-size: 55px; }
+    .top-section .date {
+      font-size: 21px; }
+
+  .currently-weather .currently-temperature sup {
+    right: 0; }
+  .currently-weather .state-description {
+    font-size: 14px; }
+  .currently-weather .item:nth-child(1) {
+    padding-left: 8px;
+    width: 119px; }
+  .currently-weather .item:last-child {
+    padding-right: 4px; }
+  .currently-weather .moon-phase {
+    font-size: 74px; }
+  .currently-weather .moonrise-time {
+    font-size: 28px; } }
 
 /*# sourceMappingURL=style.css.map */

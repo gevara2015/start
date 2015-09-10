@@ -51,6 +51,10 @@ define('main', ['components/componentsVendor/main'], function (componentsVendor)
         $('.settings').toggleClass('hide-block');
     });
 
+    $('.toggle-conf a').click(function () {
+        $('.w-conf').toggleClass('open-block');
+    });
+
     $('.refresh').click(function () {
         showWeather(currentLatitude, currentLongitude);
     });
