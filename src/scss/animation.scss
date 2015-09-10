@@ -1,0 +1,172 @@
+
+
+body {
+    //@include animation(change-bg-cold 24s linear infinite);
+}
+
+.sun-anim {
+    position : absolute;
+    top      : -50%;
+    left     : -22%;
+    opacity  : 0.99;
+    @include size(100%);
+//    @include animation(sun 24s linear infinite);
+    @include translate(0, 100%);
+    @include backface-visibility(hidden);
+    &:before {
+        content       : '';
+        position      : absolute;
+        @include size(300px);
+        border-radius : 100%;
+        opacity       : 0.8;
+        @include radial-gradient-three(rgba($sun-bg, 0.99), rgba($sun-bg, 0.3), rgba($sun-bg, 0.1));
+    }
+}
+
+.cold-bg {
+    position : absolute;
+    @include size(100%);
+    svg {
+        @include size(100%);
+        rect {
+            @include size(100%);
+        }
+    }
+    canvas {
+        @include size(100%);
+    }
+}
+
+.container {
+    position : relative;
+}
+
+@-webkit-keyframes sun {
+    0% {
+        @include translate(0, 100%);
+        //@include radial-gradient-three(rgba($sun-bg, 0.99), rgba($sun-bg, 0.3), rgba($sun-bg, 0.1));
+    }
+    25% {
+        @include translate(25%, 75%);
+        //@include radial-gradient($sun-bg, rgba($sun-bg, 0.5));
+    }
+    50% {
+        @include translate(50%, 50%);
+        //@include radial-gradient($sun-bg, rgba($sun-bg, 0.9));
+    }
+    75% {
+        @include translate(75%, 75%);
+        //@include radial-gradient-three($sun-bg, $sunset-bg, rgba($sunset-bg, 0.2));
+    }
+    100% {
+        @include translate(100%, 100%);
+        left : 0;
+        //@include radial-gradient(rgba($sunset-bg, 0.2), rgba($sun-bg, 0.2));
+    }
+}
+
+@-moz-keyframes sun {
+    0% {
+        @include translate(0, 100%);
+        //@include radial-gradient-three(rgba($sun-bg, 0.99), rgba($sun-bg, 0.3), rgba($sun-bg, 0.1));
+    }
+    25% {
+        @include translate(25%, 75%);
+        //@include radial-gradient($sun-bg, rgba($sun-bg, 0.5));
+    }
+    50% {
+        @include translate(50%, 50%);
+        //@include radial-gradient($sun-bg, rgba($sun-bg, 0.9));
+    }
+    75% {
+        @include translate(75%, 75%);
+        //@include radial-gradient-three($sun-bg, $sunset-bg, rgba($sunset-bg, 0.2));
+    }
+    100% {
+        @include translate(100%, 100%);
+        left : 0;
+        //@include radial-gradient(rgba($sunset-bg, 0.2), rgba($sun-bg, 0.2));
+    }
+}
+
+@keyframes sun {
+    0% {
+        @include translate(0, 100%);
+
+        //@include radial-gradient-three(rgba($sun-bg, 0.99), rgba($sun-bg, 0.3), rgba($sun-bg, 0.1));
+    }
+    25% {
+        @include translate(25%, 75%);
+        //@include radial-gradient($sun-bg, rgba($sun-bg, 0.5));
+    }
+    50% {
+        @include translate(50%, 50%);
+        //@include radial-gradient($sun-bg, rgba($sun-bg, 0.9));
+    }
+    75% {
+        @include translate(75%, 75%);
+        //@include radial-gradient-three($sun-bg, $sunset-bg, rgba($sunset-bg, 0.2));
+    }
+    100% {
+        @include translate(100%, 100%);
+        left : 0;
+        //@include radial-gradient(rgba($sunset-bg, 0.2), rgba($sun-bg, 0.2));
+    }
+}
+
+@-webkit-keyframes change-bg-cold {
+    0% {
+        background : $day-bg;
+    }
+    25% {
+        @include gradient($day-bg, $night-bg);
+    }
+    50% {
+        background : $night-bg;
+    }
+    75% {
+        @include gradient($night-bg, $day-bg);
+    }
+    100% {
+        background : $day-bg;
+    }
+}
+
+@-moz-keyframes change-bg-cold {
+    0% {
+        background : $day-bg;
+    }
+    25% {
+        @include gradient($day-bg, $night-bg);
+    }
+    50% {
+        background : $night-bg;
+    }
+    75% {
+        @include gradient($night-bg, $day-bg);
+    }
+    100% {
+        background : $day-bg;
+    }
+}
+
+@keyframes change-bg-cold {
+    0% {
+        background : $day-bg;
+    }
+    25% {
+        @include gradient($day-bg, $night-bg);
+    }
+    50% {
+        background : $night-bg;
+    }
+    75% {
+        @include gradient($night-bg, $day-bg);
+    }
+    100% {
+        background : $day-bg;
+    }
+}
+
+
+

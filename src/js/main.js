@@ -139,7 +139,7 @@ define('main', ['components/componentsVendor/main'], function (componentsVendor)
     //    return 'https://api.forecast.io/forecast/' + 'c96591b04685db940f3b395e3de0cffc' + "/" + lati + "," + longi + "?callback=?";
     //'https://api.forecast.io/forecast/' + 'c96591b04685db940f3b395e3de0cffc' + "/" + '49.44' + "," + '32.05' + "?callback=?"
 
-    var weatherModel = Backbone.Model.extend({
+    /*var weatherModel = Backbone.Model.extend({
         defaults: {
             'locid': '00000',
             'size': 100,
@@ -200,7 +200,7 @@ define('main', ['components/componentsVendor/main'], function (componentsVendor)
     var view = new weatherView({
         el: '#test',
         model: weatherModel
-    });
+    });*/
 
     //add CANVAS animation
 

@@ -1,0 +1,33 @@
+@media only screen and (max-width : 1600px) {
+    .top-section .date {
+        font-size : 24px;
+    }
+    .currently-weather {
+        .big-icon { font-size : 130px; }
+        .currently-temperature {
+            font-size : 75px;
+            height    : 106px;
+            sup {
+                top   : 8px;
+                right : -20px;
+            }
+        }
+        .item {
+            &:last-child { padding-top : 13px; }
+        }
+    }
+
+    .current-options .item-option {
+        .option-icon { font-size : 40px; }
+        .option-data { font-size : 20px; }
+    }
+
+}
+
+@media only screen and (max-width : 1200px) {
+    .settings {
+        flex-basis : 50.33333%;
+        max-width  : 50.33333%;
+        &.hide-block { right : -49%; }
+    }
+}
