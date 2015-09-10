@@ -1,1 +1,88 @@
-<div>Board</div>
+<div class="top-section">
+	<div id="test"></div>
+
+	<script type="text/template" id="viewBoard">
+		<span id="btn" contenteditable="true"><%= size %></span>
+		<div><%= fullInfo %></div>
+	</script>
+	<time class="last-update">10:19</time>
+	<a href="#" class="refresh"><em class="icon-refresh"></em></a>
+	<div class="city">Kharkov</div>
+	<time class="date">Monday, november 3</time>
+</div>
+
+<div class="currently-weather">
+	<div class="item">
+		<span class="big-icon">
+			<em class="icon-sunny"></em>
+		</span>
+	</div>
+	<div class="item">
+		<span class="currently-temperature">-2 <sup>o</sup></span>
+		<span class="state-description">//Mostly cloudy</span>
+	</div>
+	<div class="item">
+		<span class="moon-phase"><em class="icon-almost-old"></em></span>
+		<span class="moonrise-time">6:20</span>
+	</div>
+</div>
+
+<div class="whole-day">
+	<div class="item-day">
+		<time>6:00</time>
+		<span class="weather-state">
+			<em class="icon-thunderstorm"></em>
+		</span>
+		<span class="temperature">-2 <sup>o</sup></span>
+	</div>
+	<div class="item-day">
+		<time>6:00</time>
+		<span class="weather-state">
+			<em class="icon-thunderstorm"></em>
+		</span>
+		<span class="temperature">-2 <sup>o</sup></span>
+	</div>
+	<div class="item-day">
+		<time>6:00</time>
+		<span class="weather-state">
+			<em class="icon-thunderstorm"></em>
+		</span>
+		<span class="temperature">-2 <sup>o</sup></span>
+	</div>
+	<div class="item-day">
+		<time>6:00</time>
+		<span class="weather-state">
+			<em class="icon-thunderstorm"></em>
+		</span>
+		<span class="temperature">-2 <sup>o</sup></span>
+	</div>
+</div>
+
+<div class="current-options">
+	<div class="item-option">
+		<span class="option-icon">
+			<em class="icon-humidity"></em>
+		</span>
+		<span class="option-data humidity">50%</span>
+	</div>
+	<div class="item-option">
+		<span class="option-icon wind-direction">
+			<em class="icon-wind-direction"></em>
+		</span>
+		<span class="option-data wind-speed">5 <sup>m/c</sup></span>
+	</div>
+	<div class="item-option">
+		<span class="option-icon">
+			<em class="icon-sunrise"></em>
+		</span>
+		<span class="option-data">6:20</span>
+	</div>
+	<div class="item-option">
+		<span class="option-icon">
+			<em class="icon-sunset"></em>
+		</span>
+		<span class="option-data">16:20</span>
+	</div>
+</div>
+
+

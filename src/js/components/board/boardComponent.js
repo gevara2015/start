@@ -8,9 +8,11 @@ define(['text!components/board/boardComponent.tpl.html',
     Template = Template;
 
     Board = function(){
-       console.log('connecting boardComponent')
+       console.log('connecting boardComponent');
+
        return Template;
     };
+
 
     return Board;
 });

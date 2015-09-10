@@ -17,6 +17,7 @@
     "requirejs-plugins": "~1.0.3",
     "backbone": "~1.2.1",
     "jquery": "~2.1.4",
-    "lodash": "~3.10.0"
+    "lodash": "~3.10.0",
+    "ion.rangeSlider": "~2.0.13"
   }
 }
