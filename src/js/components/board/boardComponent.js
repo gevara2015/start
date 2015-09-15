@@ -1,60 +1,17 @@
 define(['text!components/board/boardComponent.tpl.html',
-    'libsVendor'], function (Template,
-                             libsVendor) {
+    'libsVendor',
+    'service/fakeService'], function (Template,
+                                      libsVendor,
+                                      ForecastService) {
 
     var Board,
         Template,
         weatherModel,
-        weatherView;
+        BoardView;
 
-    //Template = Template;
 
-    weatherModel = Backbone.Model.extend({
-        defaults: {
-            'fullInfo': 'test'
-        },
-
-        initialize: function () {
-            console.log("obj created");
-            this.render();
-        },
-
-        render: function () {
-            var sRender = this;
-            getForecast();
-            function getForecast() {
-                var forecastAPI = "https://api.forecast.io/forecast/c96591b04685db940f3b395e3de0cffc/37.8267,-122.423?callback=?",
-                    dataWeather,
-                    wPromise = $.getJSON(forecastAPI);
-
-                wPromise.done(function (dataWeather) {
-                    var jsonString = JSON.stringify({dataWeather});
-                    //console.log(jsonString);
-                });
-            }
-        }
-
-    });
-
-    weatherView = Backbone.View.extend({
-        events: {},
-        initialize: function () {
-            this.render();
-        },
-        render: function () {
-            var json = this.model.toJSON();
-            console.log(json);
-        },
-
-        receiveJson: function () {
-        }
-    });
-
-    weatherModel = new weatherModel({});
-
-    var view = new weatherView({
-        model: weatherModel
-    });
+    weatherModel = ForecastService;
+    console.log(weatherModel);
 
     Board = function () {
         console.log('connect boardComponent');
@@ -62,5 +19,35 @@ define(['text!components/board/boardComponent.tpl.html',
         return Template;
     };
 
-    return Board;
+    BoardView = Backbone.View.extend({
+
+        el: '#board',
+        template:'aaaaaaaaaaaaaaaaa',
+
+        initialize: function () {
+            this.render()
+        },
+        render: function () {
+            var json = weatherModel;
+            this.template = _.template(Template);
+            var view = this.template(json);
+            $('body').html(view);
+        }
+    });
+
+    /*GetForecast: function () {
+     getForecast();
+     function getForecast() {
+     var forecastAPI = "https://api.forecast.io/forecast/c96591b04685db940f3b395e3de0cffc/37.8267,-122.423?callback=?",
+     dataWeather,
+     wPromise = $.getJSON(forecastAPI);
+
+     wPromise.done(function (dataWeather) {
+     var jsonString = JSON.stringify(dataWeather);
+
+     });
+     }
+     }*/
+
+    return function(){return new BoardView()};
 });

@@ -52,9 +52,11 @@
                     top      : 6px;
                 }
             }
-            .temperature-range {
-                span { }
-            }
+        }
+    }
+    .currently-weather {
+        .item {
+            &:nth-child(1) { width : 135px; }
         }
     }
 }

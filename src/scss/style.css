@@ -1158,7 +1158,10 @@ a {
         font-size: 42px; }
         .week-weather .day .day-weather em {
           position: relative;
-          top: 6px; } }
+          top: 6px; }
+
+  .currently-weather .item:nth-child(1) {
+    width: 135px; } }
 @media only screen and (max-width: 768px) {
   .top-section {
     margin-top: 50px; }

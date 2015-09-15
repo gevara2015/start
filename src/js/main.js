@@ -101,7 +101,7 @@ define('main', ['components/componentsVendor/main'], function (componentsVendor)
         navigator.geolocation.getCurrentPosition(function (location) {
             currentLatitude = location.coords.latitude;
             currentLongitude = location.coords.longitude;
-            showWeather(currentLatitude, currentLongitude);
+            //showWeather(currentLatitude, currentLongitude);
         });
     }
 
