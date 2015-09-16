@@ -1,53 +1,37 @@
 define(['text!components/board/boardComponent.tpl.html',
-    'libsVendor',
-    'service/fakeService'], function (Template,
-                                      libsVendor,
-                                      ForecastService) {
+        'libsVendor',
+        'service/forecastService'], function (Template,
+                                              libsVendor,
+                                              ForecastService) {
 
-    var Board,
-        Template,
+    var Template,
         weatherModel,
-        BoardView;
+        BoardView,
+        $ = libsVendor.$;
 
 
     weatherModel = ForecastService;
-    console.log(weatherModel);
-
-    Board = function () {
-        console.log('connect boardComponent');
-
-        return Template;
-    };
 
     BoardView = Backbone.View.extend({
-
-        el: '#board',
-        template:'aaaaaaaaaaaaaaaaa',
-
+        template:Template,
         initialize: function () {
-            this.render()
+            console.log('connect boardComponent');
+            var self = this;
+            console.log(weatherModel)
+            $.when(weatherModel.wPromise).done(function(){
+                console.log(weatherModel.result)
+                self.render(weatherModel.result)
+            });
+
+
         },
-        render: function () {
-            var json = weatherModel;
-            this.template = _.template(Template);
+        render: function (json) {
+            this.template = _.template(this.template);
+            console.log(json)
             var view = this.template(json);
-            $('body').html(view);
+            this.$el.html(view);
         }
     });
 
-    /*GetForecast: function () {
-     getForecast();
-     function getForecast() {
-     var forecastAPI = "https://api.forecast.io/forecast/c96591b04685db940f3b395e3de0cffc/37.8267,-122.423?callback=?",
-     dataWeather,
-     wPromise = $.getJSON(forecastAPI);
-
-     wPromise.done(function (dataWeather) {
-     var jsonString = JSON.stringify(dataWeather);
-
-     });
-     }
-     }*/
-
-    return function(){return new BoardView()};
+    return BoardView;
 });

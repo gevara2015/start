@@ -20,14 +20,14 @@ define('main', ['components/componentsVendor/main'], function (componentsVendor)
     /**
      * APP components
      * */
-    Board = componentsVendor.boardComponent();
+    Board = new componentsVendor.boardComponent({'el': $holders.$board});
     Search = componentsVendor.searchComponent();
     Settings = componentsVendor.settingsComponent();
 
     /**
      * Adding components in the DOM
      * */
-    boardWrapper = document.querySelector($holders.$board).innerHTML = Board;
+
     searchWrapper = document.querySelector($holders.$search).innerHTML = Search;
     settingsWrapper = document.querySelector($holders.$settings).innerHTML = Settings;
 

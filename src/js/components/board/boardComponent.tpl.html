@@ -2,19 +2,19 @@
 
 	<time class="last-update">10:19</time>
 	<a href="#" class="refresh"><em class="icon-refresh"></em></a>
-	<div class="city">Kharkov</div>
+	<div class="city"><%= timezone%></div>
 	<time class="date">Monday, november 3</time>
 </div>
 
 <div class="currently-weather">
 	<div class="item">
 		<span class="big-icon">
-			<em class="icon-sunny"></em>
+			<em class="icon-<%= currently.icon%>"></em>
 		</span>
 	</div>
 	<div class="item">
 		<span class="currently-temperature"><%= latitude%> <sup>o</sup></span>
-		<span class="state-description">//Mostly cloudy</span>
+		<span class="state-description">//<%= currently.summary%></span>
 	</div>
 	<div class="item">
 		<span class="moon-phase"><em class="icon-almost-old"></em></span>
@@ -23,34 +23,15 @@
 </div>
 
 <div class="whole-day">
+	<% _.forEach(hourly.data, function(i) { %>
 	<div class="item-day">
-		<time>6:00</time>
+		<time><%= i.time%></time>
 		<span class="weather-state">
 			<em class="icon-thunderstorm"></em>
 		</span>
 		<span class="temperature">-2 <sup>o</sup></span>
 	</div>
-	<div class="item-day">
-		<time>6:00</time>
-		<span class="weather-state">
-			<em class="icon-thunderstorm"></em>
-		</span>
-		<span class="temperature">-2 <sup>o</sup></span>
-	</div>
-	<div class="item-day">
-		<time>6:00</time>
-		<span class="weather-state">
-			<em class="icon-thunderstorm"></em>
-		</span>
-		<span class="temperature">-2 <sup>o</sup></span>
-	</div>
-	<div class="item-day">
-		<time>6:00</time>
-		<span class="weather-state">
-			<em class="icon-thunderstorm"></em>
-		</span>
-		<span class="temperature">-2 <sup>o</sup></span>
-	</div>
+	<% }); %>
 </div>
 
 <div class="current-options">
