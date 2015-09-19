@@ -17,9 +17,9 @@ define(['text!components/board/boardComponent.tpl.html',
         initialize: function () {
             console.log('connect boardComponent');
             var self = this;
-            console.log(weatherModel)
+            //console.log(weatherModel);
             $.when(weatherModel.wPromise).done(function(){
-                console.log(weatherModel.result)
+                //console.log(weatherModel.result);
                 self.render(weatherModel.result)
             });
 
@@ -27,7 +27,6 @@ define(['text!components/board/boardComponent.tpl.html',
         },
         render: function (json) {
             this.template = _.template(this.template);
-            console.log(json)
             var view = this.template(json);
             this.$el.html(view);
         }

@@ -11,6 +11,7 @@ require.config({
         'lodash'        : '../../bower_components/lodash/lodash',
         'backbone'      : '../../bower_components/backbone/backbone',
         'ionRangeSlider': '../../bower_components/ion.rangeSlider/js/ion.rangeSlider',
+        'niceScroll'    : '../../bower_components/nicescroll/dist/jquery.nicescroll.min',
 
         /**
          *apps components */
@@ -41,6 +42,10 @@ require.config({
         },
 
         'ionRangeSlider': {
+            deps: ['jQuery']
+        },
+
+        'niceScroll': {
             deps: ['jQuery']
         }
     },

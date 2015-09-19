@@ -815,25 +815,27 @@ a {
   .currently-weather .moonrise-time {
     font-size: 30px; }
 
-.whole-day:before, .whole-day:after {
-  content: " ";
-  display: table; }
-.whole-day:after {
-  clear: both; }
-.whole-day .item-day {
-  float: left;
-  padding-top: 15px;
-  width: 25%;
-  text-align: center; }
-  .whole-day .item-day time {
-    display: block;
-    font-size: 20px; }
-  .whole-day .item-day span {
-    display: block; }
-  .whole-day .item-day .weather-state {
-    font-size: 70px; }
-  .whole-day .item-day .temperature {
-    font-size: 40px; }
+.whole-day {
+  height: 250px; }
+  .whole-day:before, .whole-day:after {
+    content: " ";
+    display: table; }
+  .whole-day:after {
+    clear: both; }
+  .whole-day .item-day {
+    float: left;
+    padding-top: 15px;
+    width: 25%;
+    text-align: center; }
+    .whole-day .item-day time {
+      display: block;
+      font-size: 20px; }
+    .whole-day .item-day span {
+      display: block; }
+    .whole-day .item-day .weather-state {
+      font-size: 70px; }
+    .whole-day .item-day .temperature {
+      font-size: 40px; }
 
 .current-options:before, .current-options:after {
   content: " ";

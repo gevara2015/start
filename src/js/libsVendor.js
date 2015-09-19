@@ -1,14 +1,16 @@
 define(['jQuery',
     'lodash',
     'backbone',
-    'ionRangeSlider'], function (jQuery,
+    'ionRangeSlider',
+    'niceScroll'], function (jQuery,
                                  lodash,
-                                 backbone, ionRangeSlider) {
+                                 backbone, ionRangeSlider, niceScroll) {
     return {
         '$'             : jQuery,
         'lodash'        : lodash,
         'backbone'      : backbone,
-        'ionRangeSlider': ionRangeSlider
+        'ionRangeSlider': ionRangeSlider,
+        'niceScroll'    : niceScroll
     }
 
 });

@@ -108,6 +108,7 @@ a {
 
 .whole-day {
     @include clearfix();
+    height : 250px;
     .item-day {
         float       : left;
         padding-top : 15px;

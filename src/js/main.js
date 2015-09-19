@@ -47,6 +47,8 @@ define('main', ['components/componentsVendor/main'], function (componentsVendor)
         postfix: " min"
     });
 
+    $('.whole-day').getNiceScroll();
+
     $('.menu-btn').click(function () {
         $('.settings').toggleClass('hide-block');
     });
