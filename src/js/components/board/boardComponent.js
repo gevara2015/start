@@ -1,26 +1,40 @@
 define(['text!components/board/boardComponent.tpl.html',
         'libsVendor',
-        'service/forecastService'], function (Template,
-                                              libsVendor,
-                                              ForecastService) {
+        'service/forecastService',
+        'service/geoLocation'], function (Template,
+                                          libsVendor,
+                                          ForecastService,
+                                          geoLocationModel) {
 
     var Template,
+        position,
         weatherModel,
         BoardView,
         $ = libsVendor.$;
 
 
-    weatherModel = ForecastService;
+     position = new geoLocationModel();
 
+        
+        
+   /**
+    * init BoardView
+    */
     BoardView = Backbone.View.extend({
         template:Template,
         initialize: function () {
             console.log('connect boardComponent');
             var self = this;
-            //console.log(weatherModel);
-            $.when(weatherModel.wPromise).done(function(){
-                //console.log(weatherModel.result);
-                self.render(weatherModel.result)
+
+            $.when(position.Promise).done(function(){
+                
+                weatherModel = new ForecastService({'currentLatitude': position.result.currentLatitude,
+                                                   'currentLongitude': position.result.currentLongitude});
+       
+                $.when(weatherModel.wPromise).done(function(){
+                  console.log(weatherModel)  
+                  self.render(weatherModel.result)
+                });
             });
 
 

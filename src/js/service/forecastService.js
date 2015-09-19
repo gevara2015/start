@@ -12,25 +12,37 @@ define(['libsVendor',
 
     BoardModel = Backbone.Model.extend({
         defaults: {},
+   
         initialize: function () {
             this.getForecast = this.GetForecast();
             this.wPromise = $.Deferred();
             this.result;
 
         },
+
         GetForecast: function () {
-            //получать широту и долготу нужно из другой модели
-            var currentlyLocation = LocationModel.GetLocation;
-            console.log(currentlyLocation);
-            var forecastAPI = "https://api.forecast.io/forecast/c96591b04685db940f3b395e3de0cffc/37.8267,122.432?callback=?",
-                self = this,
-                dataWeather;
+            
+            var self = this,
+                /*currentLatitude = this.attributes.currentLatitude,
+                currentLongitude = this.attributes.currentLongitude;*/
+
+                currentLatitude = '50.0',
+                currentLongitude = '36.15';
+
+                console.log("currentLongitude", currentLatitude)
+                console.log("currentLongitude", currentLongitude)
+
+            var forecastAPI = "https://api.forecast.io/forecast/c96591b04685db940f3b395e3de0cffc/" + currentLatitude  + "," +currentLongitude+ "?callback=?";
+                
+                
+
             return $.getJSON(forecastAPI, function (data) {
                 self.result = data;
+                console.log(data)
                 self.wPromise.resolve();
             });
         }
     });
 
-    return new BoardModel();
+    return BoardModel;
 });

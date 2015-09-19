@@ -21,8 +21,8 @@ define('main', ['components/componentsVendor/main'], function (componentsVendor)
      * APP components
      * */
     Board = new componentsVendor.boardComponent({'el': $holders.$board});
-    Search = componentsVendor.searchComponent();
-    Settings = componentsVendor.settingsComponent();
+    /*Search = componentsVendor.searchComponent();*/
+    /*Settings = componentsVendor.settingsComponent();*/
 
     /**
      * Adding components in the DOM
@@ -47,7 +47,7 @@ define('main', ['components/componentsVendor/main'], function (componentsVendor)
         postfix: " min"
     });
 
-    $('.whole-day').getNiceScroll();
+    
 
     $('.menu-btn').click(function () {
         $('.settings').toggleClass('hide-block');
@@ -103,7 +103,7 @@ define('main', ['components/componentsVendor/main'], function (componentsVendor)
         navigator.geolocation.getCurrentPosition(function (location) {
             currentLatitude = location.coords.latitude;
             currentLongitude = location.coords.longitude;
-            //showWeather(currentLatitude, currentLongitude);
+         ;
         });
     }
 
